@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قصة حبنا</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Marhey:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1c0612;--bg2:#52102f;--ink:#ffe9ef;--red:#ff3d68;--rose:#ff8fab;--gold:#ffd27a;--card:rgba(255,255,255,.07);--line:rgba(255,143,171,.35);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html{height:100%}
+body{margin:0;min-height:100%;color:var(--ink);font:21px/1.9 'Amiri','Noto Naskh Arabic',serif;background:radial-gradient(110% 70% at 50% 0%,var(--bg2),var(--bg) 75%) fixed var(--bg);overflow-x:hidden}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+section{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:80px 20px;text-align:center}
+.rv:not(.on){opacity:0}
+.rv.on{animation:in .9s both}
+@keyframes in{from{opacity:0;transform:translateY(30px) scale(.96);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+h1,h2{font-family:'Marhey',sans-serif;margin:0}
+h2{font-size:2rem;color:var(--rose);margin-bottom:26px}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.bigheart{font-size:5.5rem;line-height:1;color:var(--red);filter:drop-shadow(0 0 22px var(--red));animation:beat 1.3s infinite;margin-bottom:10px}
+@keyframes beat{0%,100%{scale:1}15%{scale:1.2}30%{scale:1}45%{scale:1.14}}
+h1{font-size:clamp(2.6rem,12vw,5rem);line-height:1.4;background:linear-gradient(100deg,var(--rose),#fff 45%,var(--gold) 60%,var(--rose)) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.sub{font-size:1.3rem;margin:6px 0 24px;opacity:.9}
+.days{display:flex;gap:12px;justify-content:center}
+.days div{min-width:84px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:12px 8px;backdrop-filter:blur(6px)}
+.days b{display:block;font:700 2rem 'Marhey',sans-serif;color:var(--gold);line-height:1.4}
+.hint{margin-top:34px;font-size:1rem;opacity:.7;animation:bob 2s infinite}
+@keyframes bob{50%{translate:0 8px}}
+.tl{position:relative;padding-right:34px;text-align:right}
+.tl::before{content:"";position:absolute;right:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--red),var(--gold))}
+.ch{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px 22px;margin-bottom:22px;backdrop-filter:blur(6px)}
+.ch::before{content:"♥";position:absolute;right:-33px;top:14px;color:var(--red);font-size:1.15rem;background:var(--bg);border-radius:50%;line-height:1}
+.ch h3{margin:0;font:700 1.25rem 'Marhey',sans-serif;color:var(--gold)}
+.ch p{margin:4px 0 0}
+.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.fl{perspective:800px;height:150px;border:0;background:none;padding:0}
+.fl i{position:absolute;inset:0;border-radius:22px;display:flex;align-items:center;justify-content:center;padding:12px;font-style:normal;backface-visibility:hidden;transition:transform .7s}
+.fl{position:relative}
+.fl .f{background:linear-gradient(140deg,var(--red),#a3123f);font-size:2.6rem}
+.fl .b{background:var(--card);border:1px solid var(--line);transform:rotateY(180deg);font-size:1.15rem;backdrop-filter:blur(6px)}
+.fl.on .f{transform:rotateY(180deg)}.fl.on .b{transform:rotateY(360deg)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:560px){.grid{grid-template-columns:repeat(3,1fr)}}
+.slot{aspect-ratio:3/4;border-radius:20px;border:1px dashed var(--line);background:var(--card);overflow:hidden;padding:0;display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:var(--rose);transition:transform .4s}
+.slot:nth-child(odd){rotate:-2.5deg}.slot:nth-child(even){rotate:2.5deg}
+.slot:hover{transform:scale(1.08) rotate(0);z-index:3}
+.slot img{width:100%;height:100%;object-fit:cover}
+.slot span{font-size:.95rem;color:var(--ink)}
+.letter{background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:26px;padding:26px 26px;text-align:right;min-height:260px;white-space:pre-line;font-size:1.3rem;box-shadow:0 0 40px rgba(255,61,104,.15)}
+.ask h2{font-size:2.3rem;color:var(--ink)}
+.row{position:relative;height:150px;display:flex;justify-content:center;align-items:center;gap:20px}
+.btn{border:0;border-radius:40px;padding:12px 38px;font:700 1.2rem 'Marhey',sans-serif;transition:transform .3s,scale .3s}
+.yes{background:linear-gradient(120deg,var(--red),var(--rose));color:#fff;box-shadow:0 0 26px rgba(255,61,104,.6)}
+.no{background:var(--card);border:1px solid var(--line)}
+#ok{display:none;font:700 1.6rem/1.8 'Marhey',sans-serif;color:var(--gold)}
+.lb{position:fixed;inset:0;z-index:70;background:rgba(10,0,6,.9);display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px}
+.lb.on{display:flex}.lb img{max-width:92vw;max-height:70vh;border-radius:16px;animation:in .5s}
+.lb .btn{background:var(--card);border:1px solid var(--line);font-size:1rem;padding:8px 22px;margin:0 4px}
+.mus{position:fixed;z-index:20;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(10px);font-size:1.5rem;color:var(--rose)}
+.mus.on{background:linear-gradient(120deg,var(--red),var(--rose));color:#fff;animation:beat 1.3s infinite}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* لا تظهر بقية الحكاية إلا بعد الضغط على ابدأ الحكاية */
+body:not(.entered) section:not(#hero){display:none!important}
+body.entered #hero{display:none!important}
+body.entered section:not(#hero){display:block!important}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<button class="mus" id="mus" aria-pressed="false">♪</button>
+
+<section id="hero" class="rv">
+  <div class="bigheart">♥</div>
+  <h1>بحبك</h1>
+  <p class="sub">ريمون ♥ مريم</p>
+  <div class="days"><div><b id="dy">٠</b>يوم</div><div><b id="hr">٠</b>ساعة</div><div><b id="mn">٠</b>دقيقة</div></div>
+  <p class="sub">من يوم ما بدأت حكايتنا</p>
+  <button class="btn yes" id="start">ابدأ الحكاية</button>
+  <p class="hint">اضغط على «ابدأ الحكاية» لتدخل إلى قصتنا ♥</p>
+  <button class="btn no" id="pick" style="display:none;margin-top:14px;font-size:1rem;padding:8px 22px">🎵 اختر أغنيتك</button><input type="file" id="aud" accept="audio/*" hidden>
+</section>
+
+<section class="rv">
+  <h2>الحكاية</h2>
+  <div class="tl">
+    <div class="ch"><h3>أول مرة شفتك</h3><p>حسيت اني شوفت ملاك وعيون متتصوفش من الجمال.</p></div>
+    <div class="ch"><h3>أول كلمة حب</h3><p>الكلمة اللي انا قولتها وانا مش حاسس بيها لانها طالعه من القلب.</p></div>
+    <div class="ch"><h3>أحلى يوم</h3><p>اليوم اللي عمري ما هنساها اول مره كلمتك فيها .</p></div>
+    <div class="ch"><h3>وبكرة أحلى</h3><p>وكل يوم معاك بيبقى أحلى من اللي قبله.</p></div>
+  </div>
+</section>
+
+<section class="rv">
+  <h2>أسباب بحبك</h2>
+  <div class="reasons" id="rs"></div>
+</section>
+
+<section class="rv">
+  <h2>لحظاتنا</h2>
+  <div class="grid" id="grid"></div>
+  <p id="eh" style="display:none;font-size:1rem">وضع التعديل: اضغط على أي مربع لإضافة صورة</p>
+</section>
+
+<section class="rv">
+  <h2>رسالة ليك</h2>
+  <div class="letter" id="lt" aria-live="polite"></div>
+</section>
+
+<section class="rv ask" id="ask">
+  <h2>عندي سؤال واحد</h2>
+  <p>تفضلي معايا كل سنة، وكل عيد حب؟</p>
+  <div class="row" id="row"><button class="btn yes" id="yes">أكيد طبعا ♥</button><button class="btn no" id="no">لأ</button></div>
+  <p id="ok">كنت عارف إنك هتقولي كده ♥<br>بحبك لآخر العمر</p>
+</section>
+
+<div class="lb" id="lb"><img id="lbi" alt=""><div><button class="btn" id="lbc">إغلاق</button><button class="btn ed" id="lbr">تغيير</button><button class="btn ed" id="lbd">حذف</button></div></div>
+<input type="file" id="file" accept="image/*" hidden>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},ar="٠١٢٣٤٥٦٧٨٩",N=function(x){return String(x).replace(/\d/g,function(c){return ar[c]})};
+var EDIT=location.hash.indexOf("edit")>-1,still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);if(e.target.id==="lt"||e.target.querySelector("#lt"))type()}})},{threshold:.15});
+document.querySelectorAll(".rv").forEach(function(v){io.observe(v)});
+/* days together */
+var S=new Date("2026-02-02T00:00:00+02:00").getTime();
+function tick(){var t=Math.max(0,Date.now()-S);$("dy").textContent=N(Math.floor(t/864e5));$("hr").textContent=N(Math.floor(t%864e5/36e5));$("mn").textContent=N(Math.floor(t%36e5/6e4))}
+tick();setInterval(tick,30000);
+$("start").addEventListener("click",function(){
+  startMusic();
+  document.body.classList.add("entered");
+  window.scrollTo(0,0);
+});
+/* reasons */
+var R=["ضحكتك","طيبتك","لما بتسمعني","حلوة بجمالك","أمانك","إنك بتخليني أحسن"];
+R.forEach(function(r){var b=document.createElement("button");b.className="fl";b.setAttribute("aria-label","سبب");b.innerHTML='<i class="f">♥</i><i class="b">'+r+'</i>';b.onclick=function(){b.classList.toggle("on")};$("rs").appendChild(b)});
+/* letter */
+var L="حبيبتي،\nكل يوم بعدّي معاكي بحس إني محظوظ.\nونفسي يجي اليوم اللي يجمعنا فيه ربنا في بيت واحد .\n ,ومها حصل عمري ما هبعد عنك .\n  عشان بحبك، وهفضل أحبك طول عمري بحبك";
+var typed=false;
+function type(){if(typed)return;typed=true;var el=$("lt"),i=0;if(still){el.textContent=L;return}(function f(){el.textContent=L.slice(0,++i);if(i<L.length)setTimeout(f,55)})()}
+/* photos */
+var PHOTOS=["1.jpeg","2.jpeg","3.jpeg","5.jpeg","6.jpeg","7.jpeg"],saved=[],cur=-1;
+try{saved=JSON.parse(localStorage.getItem("lg")||"[]")}catch(e){}
+function get(i){return PHOTOS[i]||saved[i]||null}
+function persist(){try{localStorage.setItem("lg",JSON.stringify(saved))}catch(e){}}
+function draw(){var g=$("grid");g.innerHTML="";for(var i=0;i<6;i++)(function(i){var s=document.createElement("button"),p=get(i);s.className="slot";
+ if(p){var im=new Image();im.src=p;im.alt="صورة "+N(i+1);s.appendChild(im)}else s.innerHTML=EDIT?"<span>+ أضف صورة</span>":"♥";
+ s.onclick=function(){cur=i;if(p){$("lbi").src=p;$("lb").classList.add("on")}else if(EDIT)$("file").click()};g.appendChild(s)})(i)}
+if(EDIT){$("eh").style.display="block";$("pick").style.display="inline-block"}else document.querySelectorAll(".ed").forEach(function(b){b.style.display="none"});
+$("lbc").onclick=function(){$("lb").classList.remove("on")};
+$("lbr").onclick=function(){$("file").click()};
+$("lbd").onclick=function(){saved[cur]=null;persist();$("lb").classList.remove("on");draw()};
+$("file").onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var k=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);saved[cur]=c.toDataURL("image/jpeg",.8);persist();$("lb").classList.remove("on");draw()};im.src=r.result};r.readAsDataURL(f);this.value=""};
+draw();
+/* the question */
+var sc=1;
+function dodge(e){if(e&&e.cancelable)e.preventDefault();var b=$("no"),r=$("row").getBoundingClientRect(),dx=(Math.random()-.5)*Math.min(r.width-120,300),dy=(Math.random()-.5)*110;b.style.transform="translate("+dx+"px,"+dy+"px)";sc=Math.min(1.9,sc+.12);$("yes").style.scale=sc}
+$("no").addEventListener("pointerenter",dodge);$("no").addEventListener("pointerdown",dodge);$("no").addEventListener("click",dodge);
+$("yes").addEventListener("click",function(){$("row").style.display="none";$("ok").style.display="block";$("ok").style.animation="in .9s both";if(!still)for(var i=0;i<14;i++)setTimeout(function(){burst(Math.random()*innerWidth,innerHeight*.5,30)},i*160)});
+/* music: لحن رومانسي أصلي مولّد بالكود */
+var ac,mt,tm="",st=0,CH=[[220,261.63,329.63,440],[174.61,220,261.63,349.23],[130.81,164.81,196,261.63],[196,246.94,293.66,392]],AR=[0,1,2,3,2,1,2,3];
+function nt(f,d,v){var t=ac.currentTime+.05,o=ac.createOscillator(),g=ac.createGain();o.type="triangle";o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.04);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(mt);o.start(t);o.stop(t+d)}
+function step(){var c=CH[(st>>3)%4],i=st%8;nt(c[AR[i]],1.2,.1);if(i==0)nt(c[0]/2,2.8,.13);if(i==4)nt(c[3]*2,1.6,.05);st++}
+function setBtn(on){$("mus").classList.toggle("on",on);$("mus").setAttribute("aria-pressed",on);$("mus").textContent=on?"❚❚":"♪"}
+var on=false,au=null,SONG="song3.mp3";
+function startMusic(){
+ if(on)return;
+ if(au){
+   au.play().then(function(){on=true;setBtn(true)}).catch(function(err){console.error("تعذر تشغيل الأغنية:",err);alert("مش قادر أشغل الأغنية. تأكد إن ملف song.mp3 موجود بجانب ملف الموقع واسمه صحيح.");setBtn(false)});
+   return;
+ }
+ try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();mt=mt||ac.createGain();mt.gain.value=.8;mt.connect(ac.destination);if(ac.resume)ac.resume();on=true;tm=setInterval(step,430);step();setBtn(true)}catch(e){console.error(e)}
+}
+function stopMusic(){on=false;if(au)au.pause();clearInterval(tm);tm=null;setBtn(false)}
+$("mus").addEventListener("click",function(){on?stopMusic():startMusic()});
+/* أغنيتك: تتحفظ على جهازك في وضع التعديل (#edit) */
+function db(cb){try{var r=indexedDB.open("ls",1);r.onupgradeneeded=function(){r.result.createObjectStore("k")};r.onsuccess=function(){cb(r.result)};r.onerror=function(){cb(null)}}catch(e){cb(null)}}
+function sGet(cb){db(function(d){if(!d)return cb(null);try{var q=d.transaction("k").objectStore("k").get("song");q.onsuccess=function(){cb(q.result||null)};q.onerror=function(){cb(null)}}catch(e){cb(null)}})}
+function sSet(b){db(function(d){if(!d)return;try{d.transaction("k","readwrite").objectStore("k").put(b,"song")}catch(e){}})}
+function useSong(b){if(au)au.pause();au=new Audio(typeof b==="string"?b:URL.createObjectURL(b));au.loop=true;au.onerror=function(){alert("المتصفح مش لاقي الأغنية: "+(typeof b==="string"?b:"الملف المختار"))}}
+if(SONG)useSong(SONG);else sGet(function(b){if(b)useSong(b)});
+$("pick").onclick=function(){$("aud").click()};
+$("aud").onchange=function(){var f=this.files[0];if(!f)return;sSet(f);stopMusic();useSong(f);startMusic();this.value=""};
+/* floating hearts */
+var cv=$("fx"),x=cv.getContext("2d"),P=[],W,H,cols=["#ff3d68","#ff8fab","#ffb3c6","#ffd27a"];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener("resize",rs);
+function mk(px,py,b){var a=Math.random()*6.28,v=b?2+Math.random()*5:0;return{x:px,y:py,vx:b?Math.cos(a)*v:(Math.random()-.5)*.5,vy:b?Math.sin(a)*v-2:-(.5+Math.random()*1.1),s:6+Math.random()*10,c:cols[Math.random()*4|0],b:b,l:1}}
+function burst(px,py,n){for(var i=0;i<n;i++)P.push(mk(px,py,true))}
+function heart(s){x.beginPath();x.moveTo(0,s*.35);x.bezierCurveTo(-s,-s*.3,-s*.5,-s,0,-s*.45);x.bezierCurveTo(s*.5,-s,s,-s*.3,0,s*.35);x.fill()}
+if(!still)for(var i=0;i<22;i++)P.push(mk(Math.random()*innerWidth,Math.random()*innerHeight));
+addEventListener("pointerdown",function(e){if(!still)burst(e.clientX,e.clientY,12)});
+function loop(){x.clearRect(0,0,W,H);for(var i=P.length-1;i>=0;i--){var p=P[i];p.x+=p.vx+Math.sin(p.y/50)*.3;p.y+=p.vy;if(p.b){p.vy+=.13;p.l-=.018;if(p.l<=0){P.splice(i,1);continue}}else if(p.y<-20){p.y=H+20;p.x=Math.random()*W}
+ x.globalAlpha=p.b?p.l:.55;x.fillStyle=p.c;x.save();x.translate(p.x,p.y);heart(p.s);x.restore()}
+ requestAnimationFrame(loop)}
+if(!still)loop();
+})();
+</script>
+</body>
+</html>
